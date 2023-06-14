@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Library.src.Library.Entity.Books
+{
+    public abstract class Book
+    {
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public string ISBN { get; set; }
+        public string PublicationYear { get; set; }
+        public bool CanBorrow { get; set; }
+        public bool CanPrint { get; set; }
+
+        public Book(string title, string author, string isbn, string publicationYear)
+        {
+            Title = title;
+            Author = author;
+            ISBN = isbn;
+            PublicationYear = publicationYear;
+        }
+
+        public abstract void PrintInfo();
+        
+        public virtual void Borrow()
+        {
+            if (CanBorrow)
+            {
+                Console.WriteLine($"Book '{Title}' has been borrowed.");
+            }
+            else
+            {
+                Console.WriteLine($"Book '{Title}' cannot be borrowed.");
+            }
+        }
+
+        public virtual void Return()
+        {
+            Console.WriteLine($"Book '{Title}' has been retruned.");
+        }
+    }
+}
