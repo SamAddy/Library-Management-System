@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Library.src.Interface;
 
 namespace Library.src.Library.Entity.Books
@@ -10,7 +6,7 @@ namespace Library.src.Library.Entity.Books
     {
         public string Genre { get; set; }
 
-        public Novel(string title, string author, string isbn, string publicationYear, string genre) : base(title, author, isbn, publicationYear)
+        public Novel(string title, string author, string isbn, string publicationYear, string id, string genre) : base(title, author, isbn, publicationYear, id)
         {
             Genre = genre;
             CanBorrow = true;

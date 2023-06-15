@@ -1,16 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Library.src.Interface;
 
 namespace Library.src.Library.Entity.Books
 {
-    public class Cosmic : Book, IBorrowable
+    public class Comic : Book, IBorrowable
     {
         public string Artist { get; set; }
 
-        public Cosmic(string title, string author, string isbn, string publicationYear, string artist) : base(title, author, isbn, publicationYear)
+        public Comic(string title, string author, string isbn, string publicationYear, string id, string artist) : base(title, author, isbn, publicationYear, id)
         {
             Artist = artist;
             CanBorrow = true;
@@ -19,8 +15,16 @@ namespace Library.src.Library.Entity.Books
 
         public override void Borrow()
         {
-            base.Borrow();
+            if (CanBorrow)
+            {
+                base.Borrow();
+            }
+            else 
+            {
+                Console.Write($"Comic '{Title}' cannot be borrowed.");
+            }
         }
+        
         public override void PrintInfo()
         {
             base.PrintInfo();

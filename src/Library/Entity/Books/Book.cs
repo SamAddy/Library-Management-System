@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Library.src.Library.Entity.Books
 {
-    public abstract class Book
+    public abstract class Book : BaseEntity
     {
         public string Title { get; set; }
         public string Author { get; set; }
@@ -14,12 +9,13 @@ namespace Library.src.Library.Entity.Books
         public bool CanBorrow { get; set; }
         public bool CanPrint { get; set; }
 
-        public Book(string title, string author, string isbn, string publicationYear)
+        public Book(string title, string author, string isbn, string publicationYear, string id) : base(id)
         {
             Title = title;
             Author = author;
             ISBN = isbn;
             PublicationYear = publicationYear;
+            Id = id;
         }
 
         

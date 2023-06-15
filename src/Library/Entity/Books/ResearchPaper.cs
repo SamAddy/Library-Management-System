@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Library.src.Interface;
 
 namespace Library.src.Library.Entity.Books
@@ -10,7 +6,7 @@ namespace Library.src.Library.Entity.Books
     {
         public int MaxAmountOfPrintablePages;
 
-        public ResearchPaper(string title, string author, string isbn, string publicationYear, int maxAmountOfPrintablePages) : base(title, author, isbn, publicationYear)
+        public ResearchPaper(string title, string author, string isbn, string publicationYear, int maxAmountOfPrintablePages, string id) : base(title, author, isbn, publicationYear, id)
         {
             CanBorrow = false;
             CanPrint = true;
