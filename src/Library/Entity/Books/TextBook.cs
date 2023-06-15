@@ -17,6 +17,18 @@ namespace Library.src.Library.Entity.Books
             CanPrint = true;
         }
 
+        public override void Borrow()
+        {
+            if (CanBorrow)
+            {
+                base.Borrow();
+            }
+            else
+            {
+                Console.WriteLine($"Novel '{Title}' cannot be borrowed.");
+            }
+        }
+
         public void PrintPages(int startPage, int endPage)
         {
             if (endPage > MaxAmountOfPrintablePages)
@@ -30,12 +42,7 @@ namespace Library.src.Library.Entity.Books
         }
         public override void PrintInfo()
         {
-            Console.WriteLine($"Title: {Title}");
-            Console.WriteLine($"Author: {Author}");
-            Console.WriteLine($"ISBN: {ISBN}");
-            Console.WriteLine($"Publication Year: {PublicationYear}");
-            Console.WriteLine($"Can be borrowed: {(CanBorrow ? "Available" : "Not Available")}");
-            Console.WriteLine($"Is Printable: {(CanPrint ? "Yes" : "No")}");
+            base.PrintInfo();
             Console.WriteLine($"Maximum printable pages: {MaxAmountOfPrintablePages}");
         }
     }

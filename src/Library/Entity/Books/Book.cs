@@ -22,7 +22,6 @@ namespace Library.src.Library.Entity.Books
             PublicationYear = publicationYear;
         }
 
-        public abstract void PrintInfo();
         
         public virtual void Borrow()
         {
@@ -39,6 +38,16 @@ namespace Library.src.Library.Entity.Books
         public virtual void Return()
         {
             Console.WriteLine($"Book '{Title}' has been retruned.");
+        }
+
+        public virtual void PrintInfo()
+        {
+            Console.WriteLine($"Title: {Title}");
+            Console.WriteLine($"Author: {Author}");
+            Console.WriteLine($"ISBN: {ISBN}");
+            Console.WriteLine($"Publication Year: {PublicationYear}");
+            Console.WriteLine($"Can be borrowed: {(CanBorrow ? "Available" : "Not Available")}");
+            Console.WriteLine($"Is Printable: {(CanPrint ? "Yes" : "No")}");
         }
     }
 }

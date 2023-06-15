@@ -19,13 +19,8 @@ namespace Library.src.Library.Entity.Books
 
         public override void PrintInfo()
         {
-            Console.WriteLine($"Title: {Title}");
-            Console.WriteLine($"Author: {Author}");
-            Console.WriteLine($"ISBN: {ISBN}");
-            Console.WriteLine($"Publication Year: {PublicationYear}");
+            base.PrintInfo();
             Console.WriteLine($"Genre: {Genre}");
-            Console.WriteLine($"Can be borrowed: {(CanBorrow ? "Available" : "Not Available")}");
-            Console.WriteLine($"Is Printable: {(CanPrint ? "Yes" : "No")}");
         }
     }
 }
