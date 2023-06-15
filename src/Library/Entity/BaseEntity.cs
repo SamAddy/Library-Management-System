@@ -8,11 +8,9 @@ namespace Library.src.Library.Entity
     public abstract class BaseEntity
     {
         public string Id { get; protected set; }
-        protected BaseEntity()
+        public BaseEntity(string id)
         {
-            Id = new Guid().ToString();
+            Id = Guid.NewGuid().ToString();
         }
-
-        // public abstract void PrintInfo();
     }
 }
