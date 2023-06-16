@@ -2,7 +2,7 @@ using Library.src.Interface;
 
 namespace Library.src.Library.Entity.Books
 {
-    public class TextBook : Book, IBorrowable, IPrintable
+    public class TextBook : Book, ICanBorrow, IPrintable
     {
         public int MaxAmountOfPrintablePages;
 

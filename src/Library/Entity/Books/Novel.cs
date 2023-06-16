@@ -2,7 +2,7 @@ using Library.src.Interface;
 
 namespace Library.src.Library.Entity.Books
 {
-    public class Novel : Book, IBorrowable
+    public class Novel : Book, ICanBorrow
     {
         public string Genre { get; set; }
 
