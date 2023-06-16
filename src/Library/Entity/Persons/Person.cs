@@ -6,6 +6,8 @@ namespace Library.src.Library.Entity.Persons
         public string  LastName { get; set; }
         public string EmailAddress { get; }
         public string Password { get; set; }
+
+        public string FullName => $"{FirstName} {LastName}";
  
         public Person(string firstName, string lastName, string emailAddress, string password, string id) : base(id)
         {

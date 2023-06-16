@@ -8,7 +8,21 @@ namespace Library.src.Library.Entity.Persons
         {
 
         }
-        
+
+        public void AddBook(Book book)
+        {
+            Console.WriteLine($"Librarian '{FullName} added the book '{book.Title}' to the library.");
+        }
+
+        public void EditBook(Book book)
+        {
+            Console.WriteLine($"Librarian '{FullName} has edited the book '{book.Title}'");
+        }
+
+        public void RemoveBook(Book book)
+        {
+            Console.WriteLine($"Librarian '{FullName} removed the book '{book.Title} from the library.'");
+        }
         public override void PrintInfo()
         {
             base.PrintInfo();
