@@ -2,9 +2,10 @@ using Library.src.Library.Entity.Persons;
 
 namespace Library.src.Library.Data
 {
-    public class PersonService : BaseService<Person>
+    public class PersonService<T> : BaseService<T> where T : Person
     {
-        public void Edit(Person person)
+        
+        public void Edit(T person)
         {
             Update(person);
         }
