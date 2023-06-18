@@ -33,14 +33,14 @@ namespace Library.src.Library.Data
             }
         }
 
-        public bool EditBook(string bookId, string librarianId)
+        public bool EditBook(Book updatedBook, string librarianId)
         {
             Librarian librarian = _librarianService.GetById(librarianId);
-            Book book = _bookService.GetById(bookId);
+            Book book = _bookService.GetById(updatedBook.Id);
             if (librarian != null && book != null)
             {
-                    _bookService.Update(book);
-                    librarian.EditBook(book);
+                    _bookService.Update(updatedBook);
+                    librarian.EditBook(updatedBook);
                     return true;
             }
             else
