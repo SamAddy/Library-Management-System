@@ -1,33 +1,71 @@
-# Assignment: Library Management System
+# Library Management System
 
-The goal of this assignment is to implement a basic Library Management System as a C# console application. This application will help you practice key principles of Object-Oriented Programming: Encapsulation, Abstraction, Inheritance, and Polymorphism.
-
-## Description
-
-A library has books and users. Users can be either cutomers or librarians. Librarians can add or remove books from the library and also can issue books to customers. Customers can request to borrow or return books. Also, library can have different types of books (Comic, Novel, TextBook, ResearchPaper) as well.
-
-Your job is to model this system using classes, interfaces, and/or abstract classes as you see fit.
+The Library Management System is an application that allows you to manage a collection of books, customers, and librarians in a library setting. It provides functionality for adding, removing, editing, borrowing, and returning books, as well as managing customer and librarian information.
 
 ## Features
 
-1. `Library` should manage the collection of Book objects, and `Person` objects. This class should have following methods:
-   - Add, Remove, Borrow, and Return books
-   - Add, Remove, Edit `Person` objects
-2. `Person` has properties such as Name and ID. `Customer` and `Librarian` should inherit from this class and have additional properties/features:
-   - `Customer` can Borrow and Return books.
-   - `Librarian` can Add, Remove, Edit books.
-3. `Book` has properties like Title, Author, ISBN, PublicationYear, CanBorrow, and CanPrint. To simplify the logic, we can consider each book an unique record with unique ISBN in the `Library`. In addition, `Book` has `PrintInfo()` method to print information about each book (uses `Console.WriteLine`). `Comic`, `Novel`, `TextBook`, and `ResearchPaper`should inherit properties from `Book` and have additional properties/features:
-   - `Comic` has `Artist`, `Novel` has `Genre`
-   - `Comic`, `Novel`, `TextBook` can be borrowed, but `ResearchPaper` cannot. If books are borrowable, they should have both `Borrow()` and `Return()` method
-   - `TextBook`, and `ResearchPaper` can be printed (to certain amount of pages), but `Comic`, `Novel` cannot. The `PrintPages(int startPage, endPage)`method uses `Console.WriteLine` to inform the start page and end page to be printed, in case the amount of to-be-printed pages do not exceed the maximum allowed pages.
-   - `Comic`and `Novel` should have different implementations of `PrintInfo()` with extra information about the extra properties, while `TextBook`, and `ResearchPaper` have default implementation.
+* Add new books to the library.
+* Remove books from the library.
+* Edit book details such as title, author, ISBN, etc.
+* Allow customers to borrow and return books.
+* Add new customers to the library.
+* Remove customers from the library.
+* Edit customer details such as name, email, etc.
+* Add new librarians to the library.
+* Remove librarians from the library.
+* Edit librarian details such as name, email, etc.
 
-## Requirements
+## Technologies Used
+* C# programming language
+* .NET Framework
 
-1. Encapsulation: Use proper encapsulation for the fields in your classes. Use access modifiers to limit the access to the class members.
+## Installation & Usage
+1. Clone the repository :
+```
+   https://github.com/SamAddy/Library-Management-System.git
+```
+2. Navigate to the project directory
+```
+   cd Library-Management-System
+```
+3. Restore dependencies
+```
+   dotnet restore
+```
+4. Run the application 
+```
+   dotnet run
+```
 
-2. Abstraction: Use abstract classes/interfaces where necessary. Think about what methods are common to certain objects and could be abstracted into a superclass or interface.
+## Sample Output
+```
+   Library Management System
+   Customer 'John Smith' has been added.
+   Customer 'Steve Huhhs' has been added.
+   Librarian 'Mark Anthony' has been added.
+   Librarian 'Mark Anthony has edited the book 'Comic 1'
+   Librarian 'Mark Anthony has edited the book 'Novel 1'
+   Librarian 'Mark Anthony has edited the book 'Comic 1 updated'
+   Customer 'Steve Huhhs' has been removed.
+   Book 'Comic 1 updated' has been borrowed.
+   Book 'Comic 1 updated' has been borrowed by John Smith.
+   Customer or book not found
+   Book 'Comic 1 updated' has been returned by John Smith.
 
-3. Inheritance: Make use of inheritance. There should be a clear hierarchy and use of both base and derived classes.
+   Books in the library:
+   Title: Comic 1 updated
+   Author: Author 1
+   ISBN: 1234567890
+   Publication Year: 2022
+   Can be borrowed: Available
+   Is Printable: No
+   Artist: Comic Artist
 
-4. Polymorphism: Your program should utilize polymorphism, allowing objects to decide which methods should be invoked.
+   Title: Novel 1
+   Author: Author 2
+   ISBN: 9876543210
+   Publication Year: 2021
+   Can be borrowed: Available
+   Is Printable: No
+   Genre: Thriller
+```
