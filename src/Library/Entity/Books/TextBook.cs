@@ -13,18 +13,6 @@ namespace Library.src.Library.Entity.Books
             CanPrint = true;
         }
 
-        public override void Borrow()
-        {
-            if (CanBorrow)
-            {
-                base.Borrow();
-            }
-            else
-            {
-                Console.WriteLine($"Novel '{Title}' cannot be borrowed.");
-            }
-        }
-
         public void PrintPages(int startPage, int endPage)
         {
             if (endPage > MaxAmountOfPrintablePages)
@@ -36,10 +24,28 @@ namespace Library.src.Library.Entity.Books
                 Console.WriteLine($"Printing pages {startPage} - {endPage} of `{Title}`");
             }
         }
+        
         public override void PrintInfo()
         {
             base.PrintInfo();
             Console.WriteLine($"Maximum printable pages: {MaxAmountOfPrintablePages}");
+        }
+
+        void ICanBorrow.Borrow()
+        {
+            if (CanBorrow)
+            {
+                Console.WriteLine($"Textbook '{Title}' has been borrowed.");
+            }
+            else
+            {
+                Console.WriteLine($"TextBook '{Title}' cannot be borrowed.");
+            }
+        }
+
+        void ICanBorrow.Return()
+        {
+            Console.WriteLine($"TextBook '{Title}' has been retruned.");
         }
     }
 }

@@ -14,18 +14,6 @@ namespace Library.src.Library.Entity.Books
             
         }
 
-        public override void Borrow()
-        {
-            if (CanBorrow)
-            {
-                base.Borrow();
-            }
-            else
-            {
-                Console.WriteLine($"Research paper '{Title}' cannot be borrowed.");
-            }
-        }
-
         public void PrintPages(int startPage, int endPage)
         {
             if (endPage > MaxAmountOfPrintablePages)

@@ -12,23 +12,28 @@ namespace Library.src.Library.Entity.Books
             CanBorrow = true;
             CanPrint = false;
         }
-
-        public override void Borrow()
-        {
-            if (CanBorrow)
-            {
-                base.Borrow();
-            }
-            else 
-            {
-                Console.Write($"Comic '{Title}' cannot be borrowed.");
-            }
-        }
         
         public override void PrintInfo()
         {
             base.PrintInfo();
             Console.WriteLine($"Artist: {Artist}");
+        }
+
+        void ICanBorrow.Borrow()
+        {
+            if (CanBorrow)
+            {
+                Console.WriteLine($"Comic Book '{Title}' has been borrowed.");
+            }
+            else
+            {
+                Console.WriteLine($"Comic Book '{Title}' cannot be borrowed.");
+            }
+        }
+
+        void ICanBorrow.Return()
+        {
+           Console.WriteLine($"Comic Book '{Title}' has been retruned.");
         }
     }
 }

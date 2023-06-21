@@ -18,5 +18,22 @@ namespace Library.src.Library.Entity.Books
             base.PrintInfo();
             Console.WriteLine($"Genre: {Genre}");
         }
+
+        void ICanBorrow.Borrow()
+        {
+            if (CanBorrow)
+            {
+                Console.WriteLine($"Novel '{Title}' has been borrowed.");
+            }
+            else
+            {
+                Console.WriteLine($"Novel '{Title}' cannot be borrowed.");
+            }
+        }
+
+        void ICanBorrow.Return()
+        {
+            Console.WriteLine($"Novel '{Title}' has been retruned.");
+        }
     }
 }
