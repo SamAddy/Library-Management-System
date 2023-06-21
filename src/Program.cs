@@ -26,6 +26,7 @@ internal class Program
         library.RemoveCustomer(customer2.Id);
 
         library.BorrowBook("B001", customer1.Id);
+        library.BorrowBook("B002", customer1.Id);
         library.BorrowBook("B0029", customer2.Id);
         library.ReturnBook("B001", customer1.Id);
         Console.WriteLine();
